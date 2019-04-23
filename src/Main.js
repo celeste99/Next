@@ -3,7 +3,7 @@ import { Register } from './Register';
 import { Login } from './Login';
 
 export class Main extends React.Component {
-    render () {
+    render() {
         return (
             <div className="main">
                 <Login/>
