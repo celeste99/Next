@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component }from 'react';
 import PropTypes from 'prop-types';
 import GridGallery from 'react-grid-gallery';
 
-export class Gallery extends React.Component {
+export class Gallery extends Component {
     static propTypes = {
         images: PropTypes.arrayOf(
             PropTypes.shape({
@@ -16,18 +16,17 @@ export class Gallery extends React.Component {
         ).isRequired
     }
 
-    render () {
-        var images =
-            this.props.images.map((image) => {
-                return {
-                    ...image,
-                    customOverlay: (
-                        <div style={captionStyle}>
-                            <div>{`${image.user}: ${image.caption}`}</div>
-                        </div>
-                    )
-                };
-            });
+    render() {
+        const images = this.props.images.map((image) => {
+            return {
+                ...image,
+                customOverlay: (
+                    <div style={captionStyle}>
+                        <div>{`${image.user}: ${image.caption}`}</div>
+                    </div>
+                ),
+            };
+        });
 
         return (
             <div style={wrapperStyle}>
@@ -39,6 +38,7 @@ export class Gallery extends React.Component {
         );
     }
 }
+
 
 const wrapperStyle = {
     display: "block",

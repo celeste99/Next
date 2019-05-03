@@ -8,9 +8,9 @@ class App extends Component {
         isLoggedIn: Boolean(localStorage.getItem(TOKEN_KEY)),
     }
 
-    handleSuccessfulLogin = (token) => {
+    handleLogin = (token) => {
         localStorage.setItem(TOKEN_KEY, token);
-        this.setState( {isLoggedIn: true} );
+        this.setState({ isLoggedIn: true });
     }
 
     handleLogout = () => {
@@ -21,8 +21,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <TopBar handleLogout={this.handleLogout} isLoggedIn={this.state.isLoggedIn}/>
-                <Main handleSuccessfulLogin={this.handleSuccessfulLogin} isLoggedIn={this.state.isLoggedIn}/>
+                <TopBar isLoggedIn={this.state.isLoggedIn} handleLogout={this.handleLogout}/>
+                <Main isLoggedIn={this.state.isLoggedIn} handleLogin={this.handleLogin}/>
             </div>
         );
     }
