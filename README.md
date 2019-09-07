@@ -1,4 +1,4 @@
-Around 
+Next 
 
 A Cloud and React based Social Network - Front End Implementation
 
